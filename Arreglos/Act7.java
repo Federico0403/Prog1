@@ -1,6 +1,7 @@
 package Arreglos;
 
 public class Act7 {
+    // NO ENTENDI BIEN LA CONSIGNA ASI QUE DUDA DE LO HECHO JAJAJAJ
     final static int MAX = 10;
     public static void main(String[] args) {
         int numeroN;

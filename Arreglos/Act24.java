@@ -3,46 +3,46 @@ package Arreglos;
 public class Act24 {
     final static int MAX = 10;
     final static int SEPARADOR = 0;
-
     public static void main(String[] args) {
-        int[] arr = {0, 5, 5, 0, 8, 8, 0, 3, 2, 0};
-        secuenciaMayor(arr);
+        int[]arr = {0,0,2,2,10,0,4,3,0,0};
+        
+        int inicio = 0; // para que entre una vez al while 
+        int fin = -1;//tengo que poner -1 ya que en buscar inicio busca desde fin+1
+        int suma = 0;
+        int sumaMayor = 0;
+
+        while (inicio < MAX) {
+            inicio = buscarInicio(arr, fin+1);
+            if (inicio < MAX) {
+                fin = buscarFin(arr, inicio);
+                suma = sumaDeSecuencias(arr, inicio, fin);
+                if (suma > sumaMayor) {
+                    sumaMayor = suma;
+                }
+            }
+        }
+        System.out.println("La secuencia con mayor suma es " + sumaMayor);
     }
 
-    public static void secuenciaMayor(int[] arr) {
-        int sumaMayor = 0;
-        int posInicioMayor = -1;
-        int posFinMayor = -1;
-        int i = 0;
+    public static int sumaDeSecuencias(int[]arr, int inicio, int fin){
+        int suma = 0;
+        for (int i = inicio; i <= fin; i++) {
+            suma += arr[i];
+        }
+        return suma;
+    }
 
-        while (i < MAX) {
-            // primero encuentro el inicio
-            while (i < MAX && arr[i] == SEPARADOR) {
-                i++;
-            }
-            // dsp lo guardo en la variable inicio
-            int inicio = i;
-            int suma = 0;
-            // declaro la suma y recorro la secuencia sumandola a la suma
-            while (i < MAX && arr[i] != SEPARADOR) {
-                suma += arr[i];
-                i++;
-            }
-            // una vez que arr[i] es distinto de separador (ENCONTRE EL FINAL) lo guardo en la variable fin 
-            int fin = i - 1;
-            if (suma > sumaMayor) {
-                sumaMayor = suma;
-                posInicioMayor = inicio;
-                posFinMayor = fin;
-            }
-            // comparo si suma es > a suma menor y el while sigue recorriendo
-            // hasta que i sea menor por uno a max, osea se recorre todo el arreglo 
+    public static int buscarInicio(int[]arr, int pos){
+        while (pos < MAX && arr[pos] == SEPARADOR) {
+            pos++;
         }
-        if (posInicioMayor != -1) {
-            System.out.println("Secuencia con mayor suma:");
-            System.out.println("Inicio: " + posInicioMayor + ", Fin: " + posFinMayor + ", Suma: " + sumaMayor);
-        } else {
-            System.out.println("No se encontró ninguna secuencia.");
+        return pos;
+    }
+    public static int buscarFin(int[]arr, int pos){
+        while (pos < MAX && arr[pos] != SEPARADOR) {
+            pos++;
         }
+        return pos-1;
     }
 }
+

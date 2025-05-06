@@ -4,28 +4,33 @@ public class Act23 {
     final static int MAX = 10;
     final static int SEPARADOR = 0;
     public static void main(String[] args) {
-        int[]arr = {0,0,1,2,3,3,4,3,0,0};
-        encontrarPrimeraSecuencia(arr);
+        int[]arr = {0,0,0,0,0,0,4,3,0,0};
+        
+        int inicio = 0; // para que entre una vez al while 
+        int fin = -1;//tengo que poner -1 ya que en buscar inicio busca desde fin+1
+        boolean encontrado = false;
+
+        while (inicio < MAX && encontrado == false) {
+            inicio = buscarInicio(arr, fin+1);
+            if (inicio < MAX) {
+                fin = buscarFin(arr, inicio);
+                System.out.println("El inicio de la primera secuencia es " + inicio + " y el final es :" + fin);
+                encontrado = true;
+            }
+        }
     }
 
-    public static void encontrarPrimeraSecuencia(int[]arr){
-        int posInicial = 0;
-        int posFinal = 0;
-        int i = 0;
-
-        while (i < MAX && arr[i]==0) {
-            i++;
+    public static int buscarInicio(int[]arr, int pos){
+        while (pos < MAX && arr[pos] == SEPARADOR) {
+            pos++;
         }
-        if (arr[i] > SEPARADOR) {
-            posInicial = i;
-            while (i < MAX && arr[i]!=SEPARADOR) {
-                i++;
-            }
-            if (arr[i]==SEPARADOR) {
-                posFinal = i-1;
-            }
+        return pos;
+    }
+    public static int buscarFin(int[]arr, int pos){
+        while (pos < MAX && arr[pos] != SEPARADOR) {
+            pos++;
         }
-        System.out.println("La primera secuencia distinta de ceros " + posInicial + " y la posicion final " + posFinal);
+        return pos-1;
     }
 }
 

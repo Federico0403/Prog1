@@ -17,7 +17,7 @@ public class EjTipoParcial4 {
         // producto promocionado
         int R = 22;
         // cantidad del productos promocionados R es de 2
-        int C = 4;
+        int C = 5;
 
         // si arrP tiene almenos un producto de este arreglo debo insertar R en arrP
         int[] arrT = { 8, 9 };
@@ -51,7 +51,6 @@ public class EjTipoParcial4 {
                 } else {
                     System.out.println("No se pudieron dar todas las ofertas sobraron " + (C - contadorDePromociones));
                 }
-                inicio = fin + 1;
             }
         }
         if (contadorDePromociones < C) {

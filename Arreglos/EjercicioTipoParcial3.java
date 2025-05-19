@@ -6,7 +6,7 @@ public class EjercicioTipoParcial3 {
     final static int SEPARADOR = 0;
 
     public static void main(String[] args) {
-        int[] arrM = {0, 5, 34, 2, 12, 25, 5, 32, 0, 12, 3, 88, 14, 5, 1, 5, 0, 19, 0, 0};
+        int[] arrM = {0, 5, 34, 2, 12, 25, 0, 32, 2, 12, 3, 88, 14, 5, 0, 5, 5, 19, 0, 0};
         int[] arrA = {2, 3, 6};
 
         int inicio = 0;

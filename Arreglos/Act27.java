@@ -18,7 +18,7 @@ public class Act27 {
                 tamañoSec = tamañoSecuencia(arr, inicio, fin);
                 if (tamañoSec == numeroN) {
                     eliminarSecuencia(arr, inicio, tamañoSec);
-                    fin = - 1;
+                    fin = inicio;
                 }
             }
         }

@@ -13,6 +13,7 @@ public class Act16 {
         for (int i = pos; i < MAX-1; i++) {
             arr[i] = arr[i+1];
         }
+        
     }
     public static void mostrarArreglo(int arr[]){
         for (int pos = 0; pos < MAX; pos++) {

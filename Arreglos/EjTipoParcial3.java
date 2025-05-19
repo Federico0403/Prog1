@@ -1,6 +1,6 @@
 package Arreglos;
 
-public class EjTipoParcial {
+public class EjTipoParcial3 {
     final static int MAX = 20;
     final static int SEPARADOR = 0;
 

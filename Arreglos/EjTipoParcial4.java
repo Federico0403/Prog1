@@ -17,7 +17,7 @@ public class EjTipoParcial4 {
         // producto promocionado
         int R = 22;
         // cantidad del productos promocionados R es de 2
-        int C = 3;
+        int C = 4;
 
         // si arrP tiene almenos un producto de este arreglo debo insertar R en arrP
         int[] arrT = { 8, 9 };
@@ -29,6 +29,8 @@ public class EjTipoParcial4 {
         int inicio = 0;
         int fin = -1;
 
+        int cantidadSecuencias = contarSecuencias(arrP);
+
         int contadorDePromociones = 0;
         // buscar inicio y fin
         while (inicio < MAXP) {
@@ -36,25 +38,44 @@ public class EjTipoParcial4 {
             if (inicio < MAXP) {
                 fin = buscarFin(arrP, inicio);
                 // validar que haya R para dar todavia, R marcado por C
-                if (contadorDePromociones < C) {
+                if (contadorDePromociones < C && C < cantidadSecuencias) {
                     // validar si es posible poner la promocion en cada secuencia buscando los
                     // elementos de arrT en arrP
                     if (promocionValida(arrP, arrT, inicio, fin)) {
-                        corrimientoDerecha(arrP, fin+1);
-                        arrP[fin+1] = R;
+                        if (fin + 1 < MAXP && arrP[fin + 1] == SEPARADOR) {
+                        corrimientoDerecha(arrP, fin + 1);
+                        arrP[fin + 1] = R;
                         contadorDePromociones++;
-                        fin = inicio + 1;
-                        System.out.println("Inicio = " + inicio + " Fin = " + fin);
+                    }
                     }
                 } else {
-                    System.out.println("no quedaron mas Productos R para dar");
+                    System.out.println("No se pudieron dar todas las ofertas sobraron " + (C - contadorDePromociones));
                 }
                 inicio = fin + 1;
             }
         }
+        if (contadorDePromociones < C) {
+            System.out.println("No se pudieron dar todas las ofertas. Sobraron " + (C - contadorDePromociones));
+        }
         mostrarArreglo(arrP);
 
     }
+    public static int contarSecuencias(int[]arrP){
+        int inicio = 0;
+        int fin = -1;
+        int cantidad = 0;
+
+        while (inicio < MAXP) {
+            inicio = buscarInicio(arrP, fin+1);
+            if (inicio < MAXP) {
+                fin = buscarInicio(arrP, inicio);
+                cantidad++;
+            }
+        }
+
+        return cantidad;
+    }
+
     public static void corrimientoDerecha(int[] arr, int desde) {
         for (int i = MAXP - 1; i > desde; i--) {
             arr[i] = arr[i - 1];

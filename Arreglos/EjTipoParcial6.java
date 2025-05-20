@@ -21,12 +21,8 @@ public class EjTipoParcial6 {
                 fin = buscarFin(arrP, inicio);
                 // encontrar posicion de arrR en arrP por secuencias
                 fin = encontrarYInsertarProductos(arrP, arrR, inicio, fin);
-                
-                // por cada encuentro un corrimiento derecha
-                
             }
         }
-        inicio = fin + 1;
         mostrarArreglo(arrP);
 
     }

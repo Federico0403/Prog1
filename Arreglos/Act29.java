@@ -14,10 +14,7 @@ public class Act29 {
             inicio = buscarInicio(arr, fin+1);
             if (inicio < MAX) {
                 fin = buscarFin(arr, inicio);
-                if (esDescendente(arr, inicio, fin)) {
-                    eliminarSecuencia(arr, inicio, fin - inicio + 1);
-                    fin = -1;
-                }
+                
             }
         }
         mostrarArreglo(arr);

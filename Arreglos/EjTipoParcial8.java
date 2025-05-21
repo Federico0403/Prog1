@@ -57,9 +57,4 @@ public class EjTipoParcial8 {
         }
         return pos-1;
     }
-    public static void mostrarArreglo(char arr[]) {
-        for (int pos = 0; pos < MAX; pos++) {
-            System.out.print("|" + arr[pos] + "|");
-        }
-    }
 }

@@ -10,7 +10,7 @@ public class EjTipoParcial3 {
         int inicio = 0;
         int fin = -1;
 
-        int x = 3;
+        int x = 1;
 
         while (inicio < MAX) {
             inicio = buscarInicio(arr, fin + 1);
@@ -26,7 +26,7 @@ public class EjTipoParcial3 {
                         fin = inicio + 1;
                     }
                 }
-                inicio = fin + 1;
+                
             }
         }
         mostrarArreglo(arr);

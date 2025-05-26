@@ -6,8 +6,8 @@ public class Act31 {
     public static void main(String[] args) {
         int[]arr = {0,2,0,4,3,1,0,2,4,0};
         
-        int inicio = 0; // para que entre una vez al while 
-        int fin = -1;//tengo que poner -1 ya que en buscar inicio busca desde fin+1
+        int inicio = 0; 
+        int fin = -1;
 
         int anteultimaSec = contadorSecuencias(arr)-1;
         int contadorSec = 0;
@@ -24,23 +24,11 @@ public class Act31 {
         }
         mostrarArreglo(arr);
     }
-
-    public static void invertirSec(int[] arr, int inicio, int fin) {
-        while (inicio < fin) {
-            int temp = arr[inicio];
-            arr[inicio] = arr[fin];
-            arr[fin] = temp;
-            inicio++;
-            fin--;
-        }
-    }
-    
-
     public static int contadorSecuencias(int[]arr){
         int contador = 0;
 
-        int inicio = 0; // para que entre una vez al while 
-        int fin = -1;//tengo que poner -1 ya que en buscar inicio busca desde fin+1
+        int inicio = 0; 
+        int fin = -1;
 
         while (inicio < MAX) {
             inicio = buscarInicio(arr, fin+1);
@@ -50,6 +38,16 @@ public class Act31 {
             }
         }
         return contador;
+    }
+
+    public static void invertirSec(int[] arr, int inicio, int fin) {
+        while (inicio < fin) {
+            int temp = arr[inicio];
+            arr[inicio] = arr[fin];
+            arr[fin] = temp;
+            inicio++;
+            fin--;
+        }
     }
 
 

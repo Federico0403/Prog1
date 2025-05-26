@@ -1,6 +1,6 @@
 package Arreglos;
 
-public class EjercicioTipoParcial3 {
+public class EjTipoParcial3 {
     final static int MAXM = 20;
     final static int MAXA = 3;
     final static int SEPARADOR = 0;

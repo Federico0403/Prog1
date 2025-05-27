@@ -10,7 +10,7 @@ public class EjTipoParcial6 {
         
         int[]arrP = {0, 0, 9, 12, 18, 0, 1, 5, 43, 73, 88, 0, 8, 9, 52, 0, 1, 10, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         
-        int[]arrR = {44,6};
+        int[]arrR = {44,60};
 
         int inicio = 0;
         int fin = -1;

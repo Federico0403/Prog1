@@ -34,7 +34,7 @@ public class PapelYHojaAct4 {
         boolean promocionado = false;
         while (j < MAXT) {
             int i = inicio;
-            while (i <= fin && !promocionado) {
+            while (i <= fin && arrT[j] != arrP[i]) {
                 if (arrT[j] == arrP[i]) {
                     promocionado = true;
                 }

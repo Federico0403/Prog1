@@ -42,15 +42,14 @@ public class PapelYHojaAct1 {
         }
     }
     public static boolean secuenciaValida(int[]arr, int inicio, int fin){
-        boolean valda = true;
-
-        while (inicio < fin && valda) {
-            if (arr[inicio] != arr[inicio+1]) {
-                valda = false;
-            }
+        while (inicio < fin && arr[inicio] == arr[inicio+1]) {
             inicio++;
         }
-        return valda;
+        if (inicio == fin) {
+            return true;
+        } else {
+            return false;
+        }
     }
     public static int buscarInicio(int[] arr, int pos) {
         while (pos < MAXM && arr[pos] == SEPARADOR) {

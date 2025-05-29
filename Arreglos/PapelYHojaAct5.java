@@ -31,14 +31,12 @@ public class PapelYHojaAct5 {
         mostrarArreglo(arrE);
     }
     public static int buscarPosicion(int[]arrE, int inicio, int fin, int empanada){
-        boolean encontrado = false;
-        while (inicio <= fin && !encontrado) {
-            if (empanada > arrE[inicio]) {
-                encontrado = true;
-            }
+        while (inicio <= fin && empanada > arrE[inicio]) {
             inicio++;
         }
-        return inicio;
+        
+            return inicio;
+        
     }
     public static void corrimientoDerecha(int[]arrE, int pos){
         for(int i = MAXE-1; i > pos; i--){

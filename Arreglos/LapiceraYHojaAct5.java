@@ -1,6 +1,6 @@
 package Arreglos;
 
-public class PapelYHojaAct5 {
+public class LapiceraYHojaAct5 {
     final static int MAXE = 16;
     final static int SEPARADOR = -1;
 

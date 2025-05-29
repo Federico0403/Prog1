@@ -8,7 +8,6 @@ public class LapiceraYHojaAct2 {
     public static void main(String[] args) {
         int[]arrC = {4,3,8,6,2,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         int[]arrM = {2,3,5,6,12};
-        int i = 0;
         recorrerCyProcesar(arrC, arrM);
         mostrarArreglo(arrC);
         System.out.println();

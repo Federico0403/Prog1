@@ -20,7 +20,6 @@ public class LapiceraYHojaAct3 {
                 fin = buscarFin(arrM, inicio);
                 contadorMateria++;
                 tamañoSec = fin-inicio+1;
-                System.out.println(inicio  +" " +fin);
                 if (seAsigno(arrM,arrA,tamañoSec, inicio, contadorMateria)) {
                     fin = inicio;
                 }

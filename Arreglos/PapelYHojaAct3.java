@@ -29,19 +29,18 @@ public class PapelYHojaAct3 {
     }
     public static boolean seAsigno(int[]arrM, int[]arrA, int tamañoSec, int inicio, int contadorMateria){
         int i = 0;
-        boolean asignado = false;
-        while (i<MAXA && !asignado) {
-            if (tamañoSec <= arrA[i]) {
-                borrado(arrM, tamañoSec, inicio);
-                System.out.println("La materia " + contadorMateria + " se asigno al salon " + i);
-                asignado = true;
-            }
-            i++; 
+        while (i<MAXA && tamañoSec > arrA[i]) {
+            i++;
         }
-        if (!asignado) {
+        if (i < MAXA) {
+            borrado(arrM, tamañoSec, inicio);
+            System.out.println("La materia " + contadorMateria + " se asigno al salon " + i);
+            return true;
+        } else {
             System.out.println("La materia " + contadorMateria + " no se puede asignar");
+            return false;
         }
-        return asignado;
+        
     }
     public static void borrado(int[]arrM, int tamañoSec, int inicio){
         for (int i = 0; i < tamañoSec; i++) {

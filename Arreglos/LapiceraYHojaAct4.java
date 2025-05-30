@@ -8,51 +8,53 @@ public class LapiceraYHojaAct4 {
     public static void main(String[] args) {
         int[] arrP = { 0, 0, 12, 9, 18, 0, 15, 5, 4, 7, 10, 0, 8, 9, 12, 0, 19, 10, 9, 0, 0, 0, 0, 0, 0 };
         int R = 22;
-        int C = 30;
+        int C = 3;
         int[] arrT = { 8, 9 };
         int inicio = 0;
         int fin = -1;
+        int contadorPromociones = 0;
 
-        while (inicio < MAXP) {
+        while (inicio < MAXP && contadorPromociones < C) {
             inicio = buscarInicio(arrP, fin + 1);
             if (inicio < MAXP) {
                 fin = buscarFin(arrP, inicio);
-
-                if (secuenciaPromocionado(arrP, inicio, fin, arrT) && C > 0) {
-                    C--;
-                    agregarPromocion(arrP, fin, R);
-                    fin = fin + 1;
+                if (secuenciaValida(arrP, inicio, fin, arrT)) {
+                    contadorPromociones++;
+                    corrimientoDerecha(arrP, fin+1);
+                    fin = fin+1;
+                    arrP[fin] = R;
                 }
             }
         }
         System.out.println("Quedaron sin agregar " + C + " Cantidad de productos");
         mostrarArreglo(arrP);
     }
-
-    public static boolean secuenciaPromocionado(int[] arrP, int inicio, int fin, int[] arrT) {
-        int j = 0;
-        boolean promocionado = false;
-        while (j < MAXT) {
-            int i = inicio;
-            while (i <= fin && arrT[j] != arrP[i]) {
-                if (arrT[j] == arrP[i]) {
-                    promocionado = true;
-                }
-                i++;
+    public static boolean secuenciaValida(int[]arrP, int inicio, int fin, int[]arrT){
+        int i = 0;
+        boolean encontrado = false;
+        while (i<MAXT && !encontrado) {
+            if (buscarTenP(arrT[i], arrP, inicio, fin)) {
+                encontrado = true;
             }
-            j++;
+            i++;
         }
-        return promocionado;
+        return encontrado;
     }
-
-    public static void agregarPromocion(int[] arrP, int fin, int R) {
-        fin = fin + 1;
-        for (int i = MAXP - 1; i > fin; i--) {
-            arrP[i] = arrP[i - 1];
+    public static boolean buscarTenP(int T, int[]arrP, int inicio, int fin){
+        int i = inicio; boolean encontrado = false;
+        while (i<=fin && !encontrado) {
+            if (T == arrP[i]) {
+                encontrado = true;
+            }
+            i++;
         }
-        arrP[fin] = R;
+        return encontrado;
     }
-
+    public static void corrimientoDerecha(int[]arr, int pos){
+        for (int i = MAXP-1; i > pos; i--) {
+            arr[i] = arr[i-1];
+        }
+    }
     public static int buscarInicio(int[] arr, int pos) {
         while (pos < MAXP && arr[pos] == SEPARADOR) {
             pos++;

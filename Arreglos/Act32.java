@@ -23,8 +23,8 @@ public class Act32 {
 
     public static int pedirNumero(){
         System.out.println("Ingrese un numero");
-        int numero = 0;
-        return numero = Utils.leerInt();
+        int numero = Utils.leerInt();
+        return numero;
     }
 
     public static int buscarInicio(int[]arr, int pos){

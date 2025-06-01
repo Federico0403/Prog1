@@ -1,4 +1,4 @@
-package Arreglos.Parcial;
+package Parcial;
 
 public class Act3P {
     public static int MAXM = 20;

@@ -1,4 +1,4 @@
-package Arreglos;
+package Parcial;
 
 public class LapiceraYHojaAct5 {
     final static int MAXE = 16;

@@ -1,4 +1,4 @@
-package Arreglos;
+package Parcial;
 
 public class LapiceraYHojaAct2 {
     final static int MAXC = 20;

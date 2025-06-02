@@ -39,11 +39,11 @@ public class BorradoStopwords {
         while (iniT < MAXA) {
             iniT = buscarIni(texto, finT + 1, MAXA);
             if (iniT < MAXA) {
-                finT = buscarFin(texto, iniT, MAXA); // CORREGIDO: antes era ini
+                finT = buscarFin(texto, iniT, MAXA); 
                 int tamaño = finT - iniT + 1;
                 if (tamañoS == tamaño && sonIguales(stopWords, texto, ini, fin, iniT, finT)) {
-                    eliminarSecuencia(texto, iniT, finT); // CORREGIDO: antes era ini, fin
-                    finT = iniT; // Volver a chequear desde aquí
+                    eliminarSecuencia(texto, iniT, finT);
+                    finT = iniT; 
                 }
             }
         }

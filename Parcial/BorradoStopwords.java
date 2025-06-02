@@ -1,7 +1,7 @@
 package Parcial;
 
 public class BorradoStopwords {
-    final static int MAXA = 42;
+    final static int MAXA = 41;
     final static int MAXS = 20;
     final static char SEPARADOR = ' ';
 

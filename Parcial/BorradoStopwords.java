@@ -54,7 +54,7 @@ public class BorradoStopwords {
         int j = iniB;
         boolean sonIguales = (finA - iniA) == (finB - iniB);
 
-        while (i <= finA && sonIguales) { // CORREGIDO: era < finA
+        while (i <= finA && sonIguales) { 
             if (stopWords[i] != texto[j]) {
                 sonIguales = false;
             }
@@ -71,10 +71,10 @@ public class BorradoStopwords {
     }
 
     public static void corrimientoIzquierda(char[] arr, int pos) {
-    for (int i = pos; i < arr.length - 1; i++) {
+    for (int i = pos; i < MAXA - 1; i++) {
         arr[i] = arr[i + 1];
     }
-    arr[arr.length - 1] = ' '; // para "limpiar" el último
+    arr[arr.length - 1] = ' '; 
 }
 
 

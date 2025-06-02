@@ -30,6 +30,8 @@ public class patron {
 
                         fin = ini;
                     }
+                } else {
+                    cantidadEncontradaPatron = 0;
                 }
             }
         }

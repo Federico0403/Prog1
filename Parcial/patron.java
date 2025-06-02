@@ -1,4 +1,4 @@
-package Arreglos.Parcial;
+package Parcial;
 
 public class patron {
     final static int MAX = 21;

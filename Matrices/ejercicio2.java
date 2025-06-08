@@ -5,7 +5,7 @@ final static int MAXF = 5;
     final static int MAXC = 10;
 
     public static void main(String[] args) {
-        int[][] mat = { { 1, 3, 5, 6, 7, 8, 9, 1, 2, 3 },
+        int[][] mat = {     { 1, 3, 5, 6, 7, 8, 9, 1, 2, 3 },
                             { 1, 3, 5, 6, 7, 8, 9, 1, 2, 3 },
                             { 1, 3, 5, 6, 7, 8, 9, 1, 2, 3 },
                             { 1, 3, 5, 6, 7, 8, 9, 1, 2, 3 },
